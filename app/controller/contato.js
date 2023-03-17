@@ -6,18 +6,25 @@ var contatos = [
 
 module.exports = function () {
   var controller = {};
-  controller.listaContatos = function (req, res) {
-    res.json(contatos);
+  controller.listaContatos = function (request, response) {
+    response.json(contatos);
   };
-  controller.obtemContato = function (req, res) {
-    var idContato = req.params.id;
+  controller.obtemContato = function (request, response) {
+    var idContato = request.params.id;
     var contato = contatos.filter(function (contato) {
       return contato._id == idContato;
     })[0];
     contato
-      ? res.json(contato)
-      : res.status(404).send("Contato não encontrado");
+      ? response.json(contato)
+      : response.status(404).send("Contato não encontrado");
   };
 
+  controller.removeContato = function(request, response){
+    let idContato = request.params.id;
+    contatos = contatos.filter(function(contato) {
+      return contato._id != idContato;
+    })
+    response.sendStatus(204).end()
+  }
   return controller;
 };
