@@ -6,7 +6,7 @@ var contatos = [
 
 module.exports = function () {
   var controller = {};
-  controller.listaTodos = function (request, response) {
+  controller.listaContatos = function (request, response) {
     response.json(contatos);
   };
   controller.obtemContato = function (request, response) {
@@ -20,7 +20,7 @@ module.exports = function () {
   };
 
   controller.removeContato = function(request, response){
-    let idContato = request.params.id;
+    var idContato = request.params.id;
     contatos = contatos.filter(function(contato) {
       return contato._id != idContato;
     })
