@@ -6,7 +6,7 @@ var contatos = [
 
 module.exports = function () {
   var controller = {};
-  controller.listaContatos = function (request, response) {
+  controller.listaTodos = function (request, response) {
     response.json(contatos);
   };
   controller.obtemContato = function (request, response) {
