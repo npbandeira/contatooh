@@ -31,6 +31,7 @@ angular.module('contatooh').controller('ContatoController',
 			})
 			.catch(function(erro){
 				$scope.mensagem = {texto: "Não foi possível salvar"}
+				console.log(erro)
 			})
 		}
 });

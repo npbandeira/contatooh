@@ -14,6 +14,7 @@ angular
       Contato.query(
         function (contatos) {
           $scope.contatos = contatos;
+          console.log(contatos)
           $scope.mensagem = {}
         },
         function (erro) {
