@@ -1,10 +1,7 @@
 angular.module('contatooh').controller('ContatoController', 
 // Contato.html
-	function($scope, $routeParams, $resource) {
-		 const Contato = $resource("/contatos/:id")
-
+	function($scope, $routeParams, Contato) {
 		// registro do contato selecionando
-
 		if($routeParams.contatoId){
 			Contato.get({id: $routeParams.contatoId},
 				function(contato){

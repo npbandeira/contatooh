@@ -1,8 +1,7 @@
 angular
   .module("contatooh")
-  .controller("ContatosController", function ($scope, $resource) {
+  .controller("ContatosController", function ($scope, Contato) {
     // Contatos.html
-    const Contato = $resource("/contatos/:id"); //$resouce devolve um objeto
     $scope.contatos = []
 
     $scope.filtro = "";
