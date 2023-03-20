@@ -35,14 +35,15 @@ module.exports = function () {
     var contato = request.body;
     contato = contato._id ?
       atualiza(contato) :
-      adiciona(adiciona);
+      adiciona(contato)
     response.json(contato);
   };
 
   function adiciona(contatoNovo) {
     contatoNovo._id = ++ID_CONTATO_INC;
     contatos.push(contatoNovo);
-    return contatoNovo;
+
+    return contatoNovo
   }
 
   function atualiza(contatoAlterar) {
